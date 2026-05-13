@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* PAGES */
+.page {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* INTRO */
+.intro-text {
+  font-size: 2.5em;
+  animation: fadeIntro 4s ease forwards;
+}
+
+@keyframes fadeIntro {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* STARS */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* INPUT */
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  width: 250px;
+  margin-top: 20px;
+}
+
+/* BUTTON */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: hotpink;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+/* GIFT */
+.gift-image {
+  width: 220px;
+  cursor: pointer;
+  transition: 0.6s;
+}
+
+.gift-box.open .gift-image {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.birthday-popup {
+  display: none;
+  margin-top: 20px;
+  font-size: 2em;
+  color: gold;
+}
+
+.birthday-popup.show {
+  display: block;
+}
+
+/* LETTER */
+.letter {
+  max-width: 800px;
+  line-height: 1.8;
+  font-size: 1.2em;
+  white-space: pre-line;
+}
+
+/* SPECIAL LIST */
+.special-list p {
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+/* SLIDESHOW */
+.slideshow-container {
+  position: relative;
+  width: 320px;
+  height: 500px;
+  margin-top: 20px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1.5s ease,
+              transform 8s ease;
+
+  transform: scale(1);
+}
+
+.active-slide {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* FINAL */
+.final-text {
+  font-size: 2.5em;
+}
+
+.age-text {
+  font-size: 4em;
+  color: gold;
+  text-shadow: 0 0 20px gold;
+}
+
+/* SECRET HEART */
+.secret-heart {
+  font-size: 3em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#secretMessage {
+  display: none;
+  margin-top: 15px;
+  font-size: 1.4em;
+  color: gold;
+}
+
+/* HEARTS */
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: floatUp 5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
